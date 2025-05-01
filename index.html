@@ -1,200 +1,184 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1894.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сравнение на Стилизиращи Продукти</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #f4f4f4; position: relative; }
+    .rating-container {
+      width: 100px;
+      height: 20px;
+      background-color: #e0e0e0;
+      position: relative;
+      display: inline-block;
+      border-radius: 4px;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+    .rating-bar {
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .rating-label {
+      display: inline-block;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+    .parameter { text-align: left; }
+    .product-image {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .search-container {
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 10;
+    }
+    .search-suggestions {
+      border: 1px solid #ccc;
+      max-height: 150px;
+      overflow-y: auto;
+      position: absolute;
+      background: #fff;
+      width: 300px;
+      z-index: 1000;
+    }
+    .search-suggestions div {
+      padding: 5px;
+      cursor: pointer;
+    }
+    .search-suggestions div:hover {
+      background-color: #f0f0f0;
+    }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: red;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="bg"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Сравнение на Стилизиращи Продукти&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body { font-family: Arial, sans-serif; padding: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>table { width: 100%; border-collapse: collapse; margin-top: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>th { background-color: #f4f4f4; position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.rating-container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: #e0e0e0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: middle;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.rating-bar {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.rating-label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: middle;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.parameter { text-align: left; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.product-image {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 100px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-height: 100px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.search-container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 10;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.search-suggestions {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-height: 150px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-y: auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 300px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.search-suggestions div {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.search-suggestions div:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f0f0f0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.remove-btn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: red;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>right: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Сравнение на Стилизиращи Продукти&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="search-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="product-search" placeholder="Търси продукти..." oninput="searchProducts()" autocomplete="off"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="suggestions" class="search-suggestions"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="compareProducts()"&gt;Сравни&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="comparison"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let products = [];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const selectedProducts = [];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>async function fetchProductsFromSheet() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const sheetId = "1RCvnLdJRiiKOt-2d7YQK4RWl7VZultqwCVA_y3R0n4E";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const sheetName = "Лист1";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const url = `https://opensheet.elk.sh/${sheetId}/${encodeURIComponent(sheetName)}`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const response = await fetch(url);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (!response.ok) throw new Error("HTTP статус " + response.status);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const data = await response.json();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>products = data.map(p =&gt; ({</p>
-<p class="p1"><span class="Apple-converted-space">          </span>име: p.име,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>блясък: Number(p.блясък),</p>
-<p class="p1"><span class="Apple-converted-space">          </span>фиксация: Number(p.фиксация),</p>
-<p class="p1"><span class="Apple-converted-space">          </span>тип: p.тип,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>изображение: p.изображение,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>текстура: p.текстура,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>подходящ: p.подходящ,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ползи: p.ползи</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>} catch (error) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>console.error("Грешка при зареждане на данни от Google Sheets:", error);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>alert("Неуспешно зареждане на продуктите. Моля, проверете дали таблицата е публична и правилно споделена.");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>fetchProductsFromSheet();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function searchProducts() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const query = document.getElementById("product-search").value.toLowerCase();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const suggestions = document.getElementById("suggestions");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>suggestions.innerHTML = "";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (query.length === 0) return;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const matches = products.filter(p =&gt; p.име.toLowerCase().includes(query));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>matches.forEach(p =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const div = document.createElement("div");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>div.textContent = p.име;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>div.onclick = () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>if (!selectedProducts.includes(p)) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>selectedProducts.push(p);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("product-search").value = "";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>suggestions.innerHTML = "";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>renderSelected();</p>
-<p class="p1"><span class="Apple-converted-space">          </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>};</p>
-<p class="p1"><span class="Apple-converted-space">        </span>suggestions.appendChild(div);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function getBarColor(value) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (value &lt;= 4) return '#f44336'; // червено</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (value &lt;= 7) return '#ffeb3b'; // жълто</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return '#4caf50'; // зелено</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function removeProduct(index) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>selectedProducts.splice(index, 1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>renderSelected();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function renderSelected() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const container = document.getElementById("comparison");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (selectedProducts.length === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>container.innerHTML = "&lt;p&gt;Няма избрани продукти.&lt;/p&gt;";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>let html = `&lt;table&gt;&lt;tr&gt;&lt;th&gt;Параметър&lt;/th&gt;${selectedProducts.map((p, i) =&gt;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>`&lt;th style="position: relative;"&gt;&lt;button class='remove-btn' onclick='removeProduct(${i})'&gt;&amp;times;&lt;/button&gt;&lt;img src="${p.изображение}" class="product-image"&gt;&lt;br&gt;${p.име}&lt;/th&gt;`).join('')}&lt;/tr&gt;`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;tr&gt;&lt;td class="parameter"&gt;Тип&lt;/td&gt;${selectedProducts.map(p =&gt; `&lt;td&gt;${p.тип}&lt;/td&gt;`).join('')}&lt;/tr&gt;`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const parameters = ["блясък", "фиксация"];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>parameters.forEach(param =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>html += `&lt;tr&gt;&lt;td class="parameter"&gt;${param.charAt(0).toUpperCase() + param.slice(1)}&lt;/td&gt;` +</p>
-<p class="p1"><span class="Apple-converted-space">          </span>selectedProducts.map(p =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const value = p[param];</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const barWidth = value * 10;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const barColor = getBarColor(value);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return `&lt;td&gt;&lt;div class="rating-container"&gt;&lt;div class="rating-bar" style="width: ${barWidth}%; background-color: ${barColor};"&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="rating-label"&gt;${value}/10&lt;/span&gt;&lt;/td&gt;`;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>}).join('') + '&lt;/tr&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;tr&gt;&lt;td class="parameter"&gt;Текстура&lt;/td&gt;${selectedProducts.map(p =&gt; `&lt;td&gt;${p.текстура}&lt;/td&gt;`).join('')}&lt;/tr&gt;`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;tr&gt;&lt;td class="parameter"&gt;Подходящ за&lt;/td&gt;${selectedProducts.map(p =&gt; `&lt;td&gt;${p.подходящ}&lt;/td&gt;`).join('')}&lt;/tr&gt;`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;tr&gt;&lt;td class="parameter"&gt;Ползи&lt;/td&gt;${selectedProducts.map(p =&gt; `&lt;td&gt;${p.ползи}&lt;/td&gt;`).join('')}&lt;/tr&gt;`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>html += '&lt;/table&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>container.innerHTML = html;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function compareProducts() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>renderSelected();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>Сравнение на Стилизиращи Продукти</h1>
+
+  <div class="search-container">
+    <input type="text" id="product-search" placeholder="Търси продукти..." oninput="searchProducts()" autocomplete="off">
+    <div id="suggestions" class="search-suggestions"></div>
+  </div>
+
+  <button onclick="compareProducts()">Сравни</button>
+
+  <div id="comparison"></div>
+
+  <script>
+    let products = [];
+    const selectedProducts = [];
+
+    async function fetchProductsFromSheet() {
+      const sheetId = "1RCvnLdJRiiKOt-2d7YQK4RWl7VZultqwCVA_y3R0n4E";
+      const sheetName = "Лист1";
+      const url = `https://opensheet.elk.sh/${sheetId}/${encodeURIComponent(sheetName)}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("HTTP статус " + response.status);
+        const data = await response.json();
+        products = data.map(p => ({
+          име: p.име,
+          блясък: Number(p.блясък),
+          фиксация: Number(p.фиксация),
+          тип: p.тип,
+          изображение: p.изображение,
+          текстура: p.текстура,
+          подходящ: p.подходящ,
+          ползи: p.ползи
+        }));
+      } catch (error) {
+        console.error("Грешка при зареждане на данни от Google Sheets:", error);
+        alert("Неуспешно зареждане на продуктите. Моля, проверете дали таблицата е публична и правилно споделена.");
+      }
+    }
+
+    fetchProductsFromSheet();
+
+    function searchProducts() {
+      const query = document.getElementById("product-search").value.toLowerCase();
+      const suggestions = document.getElementById("suggestions");
+      suggestions.innerHTML = "";
+
+      if (query.length === 0) return;
+
+      const matches = products.filter(p => p.име.toLowerCase().includes(query));
+      matches.forEach(p => {
+        const div = document.createElement("div");
+        div.textContent = p.име;
+        div.onclick = () => {
+          if (!selectedProducts.includes(p)) {
+            selectedProducts.push(p);
+            document.getElementById("product-search").value = "";
+            suggestions.innerHTML = "";
+            renderSelected();
+          }
+        };
+        suggestions.appendChild(div);
+      });
+    }
+
+    function getBarColor(value) {
+      if (value <= 4) return '#f44336'; // червено
+      if (value <= 7) return '#ffeb3b'; // жълто
+      return '#4caf50'; // зелено
+    }
+
+    function removeProduct(index) {
+      selectedProducts.splice(index, 1);
+      renderSelected();
+    }
+
+    function renderSelected() {
+      const container = document.getElementById("comparison");
+      if (selectedProducts.length === 0) {
+        container.innerHTML = "<p>Няма избрани продукти.</p>";
+        return;
+      }
+
+      let html = `<table><tr><th>Параметър</th>${selectedProducts.map((p, i) => 
+        `<th style="position: relative;"><button class='remove-btn' onclick='removeProduct(${i})'>&times;</button><img src="${p.изображение}" class="product-image"><br>${p.име}</th>`).join('')}</tr>`;
+
+      html += `<tr><td class="parameter">Тип</td>${selectedProducts.map(p => `<td>${p.тип}</td>`).join('')}</tr>`;
+
+      const parameters = ["блясък", "фиксация"];
+      parameters.forEach(param => {
+        html += `<tr><td class="parameter">${param.charAt(0).toUpperCase() + param.slice(1)}</td>` +
+          selectedProducts.map(p => {
+            const value = p[param];
+            const barWidth = value * 10;
+            const barColor = getBarColor(value);
+            return `<td><div class="rating-container"><div class="rating-bar" style="width: ${barWidth}%; background-color: ${barColor};"></div></div><span class="rating-label">${value}/10</span></td>`;
+          }).join('') + '</tr>';
+      });
+
+      html += `<tr><td class="parameter">Текстура</td>${selectedProducts.map(p => `<td>${p.текстура}</td>`).join('')}</tr>`;
+      html += `<tr><td class="parameter">Подходящ за</td>${selectedProducts.map(p => `<td>${p.подходящ}</td>`).join('')}</tr>`;
+      html += `<tr><td class="parameter">Ползи</td>${selectedProducts.map(p => `<td>${p.ползи}</td>`).join('')}</tr>`;
+
+      html += '</table>';
+      container.innerHTML = html;
+    }
+
+    function compareProducts() {
+      renderSelected();
+    }
+  </script>
 </body>
 </html>
